@@ -19,11 +19,23 @@ last_pos = None # stores the last mouse position.
 
 ### We need a while loop for the main loop of the game to handle the various actions/ events. 
 while True: 
-   for event in pygame.event.get(): ## this is so user can quit the game 
-    if event.type == pygame.QUIT:
+   for event in pygame.event.get(): 
+    if event.type == pygame.QUIT: ## this is so user can quit the game 
         pygame.quit()
-        sys.exit
- screen. fill (BG_COLOR) # TEST to see if code will generate screen
+        sys.exit         
+    if event.type == pygame.MOUSEBUTTONDOWN: #maps left click as drawing when pressed down. 
+       if event.button == l:
+          drawing = True
+          last_pos = event.pos
+    if event.type == pygame.MOUSEMOTION:
+       if drawing:
+          current_pos = event.pos
+          pygame.draw.line(screen, BLACK , last_pos, current_pos 5)
+
+    if event.type == pygame.MOUSEBUTTONUP:
+       if event.button == l:
+          drawing = False
+  ## screen. fill (BG_COLOR) # TEST to see if code will generate screen
 pygame.display.flip # updates display 
     
     
