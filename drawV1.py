@@ -30,7 +30,8 @@ while True:
     if event.type == pygame.MOUSEMOTION:
        if drawing:
           current_pos = event.pos
-          pygame.draw.line(screen, BLACK , last_pos, current_pos 5)
+          pygame.draw.line(screen, DRAW_COLOR , last_pos, current_pos,LINE_WIDTH)
+          last_pos = current_pos
 
     if event.type == pygame.MOUSEBUTTONUP:
        if event.button == l:
