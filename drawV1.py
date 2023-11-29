@@ -10,7 +10,7 @@ DRAW_COLOR = (255, 255, 255)
 LINE_WIDTH = 3 
 
 # this sections creates the pygame window 
-screen = pygame.display.set.mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("VERSION ONE PAINTER ")
 
 drawing = False # mouse held down will equal painting/ True   
