@@ -1,3 +1,4 @@
+
 import pygame
 import sys
 
@@ -22,7 +23,8 @@ while True:
    for event in pygame.event.get(): 
     if event.type == pygame.QUIT: ## this is so user can quit the game 
         pygame.quit()
-        sys.exit         
+        sys.exit
+        break
     if event.type == pygame.MOUSEBUTTONDOWN: #maps left click as drawing when pressed down. 
        if event.button == 1:
           drawing = True
@@ -37,7 +39,7 @@ while True:
        if event.button == 1:
           drawing = False
   ## screen. fill (BG_COLOR) # TEST to see if code will generate screen
-pygame.display.flip # updates display 
-    
+    pygame.display.flip() # updates display 
+
     
     
