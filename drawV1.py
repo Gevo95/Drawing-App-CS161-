@@ -24,7 +24,7 @@ while True:
         pygame.quit()
         sys.exit         
     if event.type == pygame.MOUSEBUTTONDOWN: #maps left click as drawing when pressed down. 
-       if event.button == l:
+       if event.button == 1:
           drawing = True
           last_pos = event.pos
     if event.type == pygame.MOUSEMOTION:
@@ -34,7 +34,7 @@ while True:
           last_pos = current_pos
 
     if event.type == pygame.MOUSEBUTTONUP:
-       if event.button == l:
+       if event.button == 1:
           drawing = False
   ## screen. fill (BG_COLOR) # TEST to see if code will generate screen
 pygame.display.flip # updates display 
