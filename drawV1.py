@@ -1,3 +1,4 @@
+## Issues to work on when mouse L click (1 in py) is released it still picks it up as drawing I believe problem is on line #38 , havent added any features
 import pygame
 import sys
 
@@ -34,7 +35,7 @@ while True:
           pygame.draw.line(screen, DRAW_COLOR , last_pos, current_pos,LINE_WIDTH)
           last_pos = current_pos
 
-    if event.type == pygame.MOUSEBUTTONUP:
+    if event.type == pygame.MOUSEBUTTONUP: ## Possible issue with it not ending drawing after L key is released 
        if event.button == 1:
         Return = False # makes it so that it doesnt keep looping and opening new window after its closed 
         
