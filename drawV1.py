@@ -1,4 +1,3 @@
-
 import pygame
 import sys
 
@@ -24,7 +23,7 @@ while True:
     if event.type == pygame.QUIT: ## this is so user can quit the game 
         pygame.quit()
         sys.exit
-        break
+      
     if event.type == pygame.MOUSEBUTTONDOWN: #maps left click as drawing when pressed down. 
        if event.button == 1:
           drawing = True
@@ -37,9 +36,7 @@ while True:
 
     if event.type == pygame.MOUSEBUTTONUP:
        if event.button == 1:
-          drawing = False
+        Return = False # makes it so that it doesnt keep looping and opening new window after its closed 
+        
   ## screen. fill (BG_COLOR) # TEST to see if code will generate screen
     pygame.display.flip() # updates display 
-
-    
-    
