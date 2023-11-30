@@ -1,4 +1,4 @@
-## Issues to work on when mouse L click (1 in py) is released it still picks it up as drawing I believe problem is on line #38 , havent added any features
+# added erase feature but it currently requires both left and right click simultaneously see lines 35 and on 
 import pygame
 import sys
 
@@ -16,6 +16,7 @@ pygame.display.set_caption("VERSION ONE PAINTER ")
 
 drawing = False # mouse held down will equal painting/ True   
 last_pos = None # stores the last mouse position. 
+erase = True
 
 
 ### We need a while loop for the main loop of the game to handle the various actions/ events. 
@@ -29,15 +30,26 @@ while True:
        if event.button == 1:
           drawing = True
           last_pos = event.pos
+
+       if event.button == 3: # 34-35 map R click as eraser 3 is python "mapping" for lack of better term for R click but for some reason requiring L & R click error is somewhere around here xD 
+          erase = True  
+    
     if event.type == pygame.MOUSEMOTION:
        if drawing:
           current_pos = event.pos
-          pygame.draw.line(screen, DRAW_COLOR , last_pos, current_pos,LINE_WIDTH)
+          if not erase:
+            pygame.draw.line(screen, DRAW_COLOR , last_pos, current_pos,LINE_WIDTH)
+          else:
+             pygame.draw.line(screen,BG_COLOR,last_pos,current_pos,LINE_WIDTH) 
           last_pos = current_pos
+ 
 
     if event.type == pygame.MOUSEBUTTONUP: 
        if event.button == 1:
         drawing = False # drawing = False makes it so that when we release L mouse it no longer tracks movement as drawing 
+
+       if event.button == 3:
+         erase = False 
         
-  ## screen. fill (BG_COLOR) # TEST to see if code will generate screen
-    pygame.display.flip() # updates display 
+   
+   pygame.display.flip() # updates display 
