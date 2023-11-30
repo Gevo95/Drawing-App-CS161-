@@ -17,10 +17,12 @@ pygame.display.set_caption("VERSION ONE PAINTER ")
 drawing = False # mouse held down will equal painting/ True   
 last_pos = None # stores the last mouse position. 
 erase = True
-
+clock = pygame.time.Clock() # there seem to be some input lag wonder if its the same for you adjusting FPS is a way to limit how much CPU game uses 
+FPS = 30
 
 ### We need a while loop for the main loop of the game to handle the various actions/ events. 
-while True: 
+while True:
+   clock.tick(FPS) # part of FPS capping . 
    for event in pygame.event.get(): 
     if event.type == pygame.QUIT: ## this is so user can quit the game 
         pygame.quit()
