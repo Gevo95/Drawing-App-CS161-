@@ -7,7 +7,7 @@ pygame.init()
 # sets the dimensions for the painting window this can be changed just made it small 
 WIDTH, HEIGHT = 500,300
 BG_COLOR = (0, 0, 0) # 0 0 0 is a black background white would be 255 255 255 (look up RGB python colors) 
-DRAW_COLOR = (255, 255, 0)
+DRAW_COLOR = (255, 255, 0) # yellow not sure how to do multi color options
 LINE_WIDTH = 3 
 
 # this sections creates the pygame window 
