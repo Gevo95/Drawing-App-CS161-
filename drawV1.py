@@ -35,9 +35,9 @@ while True:
           pygame.draw.line(screen, DRAW_COLOR , last_pos, current_pos,LINE_WIDTH)
           last_pos = current_pos
 
-    if event.type == pygame.MOUSEBUTTONUP: ## Possible issue with it not ending drawing after L key is released 
+    if event.type == pygame.MOUSEBUTTONUP: 
        if event.button == 1:
-        drawing = False # makes it so that it doesnt keep looping and opening new window after its closed 
+        drawing = False # drawing = False makes it so that when we release L mouse it no longer tracks movement as drawing 
         
   ## screen. fill (BG_COLOR) # TEST to see if code will generate screen
     pygame.display.flip() # updates display 
