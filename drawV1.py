@@ -37,7 +37,7 @@ while True:
           last_pos = event.pos
 
        if event.button == 3: # 34-35 map R click as eraser 3 is python "mapping" for lack of better term for R click but for some reason requiring L & R click error is somewhere around here xD 
-          erase = True  
+          erase = not erase  
     
     if event.type == pygame.MOUSEMOTION:
        if drawing:
